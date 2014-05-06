@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 
-# Create your views here.
+from foods.models import Item
+
+class ItemAdd(CreateView):
+    model = Item
+    fields = ["name"]
