@@ -1,8 +1,14 @@
 <table id="itemlist">
-<th colspan="2">Items</th>
+<th colspan="4">Items</th>
 {% for item in object_list %}
-{% if forloop.counter|divisibleby:2 %}<tr class="alt">{% else %}<tr>{% endif %}<td>{{ item.id }}</td>
+{% if not item.was_purchased %}
+{% if forloop.counter|divisibleby:2 %}<tr class="alt">{% else %}<tr>{% endif %}
+<td>{{ item.id }}</td>
 <td>{{ item.name }}</td>
+<td>Price Box Here</td>
+<td>Buy Button Here</td>
+</tr>
+{% endif %}
 {% endfor %}
 </table><!--end itemlist-->
 
