@@ -3,7 +3,6 @@ from django.core.urlresolvers import reverse
 
 from foods.models import Item
 
-# Create your tests here.
 class FoodsText(TestCase):
     def test_index(self):
         """
@@ -20,4 +19,4 @@ class FoodsText(TestCase):
         response = self.client.post(reverse("foods:index"),
             {"name": newitem}, follow=True)
         self.assertEqual(response.status_code, 200)
-#        self.assertContains(response, newitem)
+        self.assertContains(response, newitem)
