@@ -1,0 +1,9 @@
+1. Add modification form context to add Item attributes such as price and market
+2. Add Delete Button to the modification form context
+3. Add JavaScript to display prior pricing in price field of modification form context
+4. Create View to List all Items purchased
+5. Create View to Display price trajectory graphs
+6. Add static content including css and js files and images
+7. Add application icons to static content
+8. Customize Admin interface re foods app
+9. Refactor Templates to include proper base.html
