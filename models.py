@@ -5,6 +5,7 @@ class Item(models.Model):
     name = models.CharField(max_length=50)
     purchased = models.BooleanField(default=False)
     purchased_date = models.DateField(null=True, blank=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     market = models.CharField(max_length=20, null=True, blank=True)
     notes = models.TextField(null=True, blank=True)
 
@@ -17,3 +18,6 @@ class Item(models.Model):
             return True
         elif not self.purchased:
             return False
+    def return_price(self):
+        if self.price:
+            return "${}".format(self.price)
