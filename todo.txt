@@ -1,9 +1,17 @@
 1. Add modification form context to add Item attributes such as price and market
 2. Add Delete Button to the modification form context
 3. Add JavaScript to display prior pricing in price field of modification form context
-4. Create View to List all Items purchased
-5. Create View to Display price trajectory graphs
+4. Create History View to list all Items purchased (paginated)
+5. Create Trends View to index analytics
 6. Add static content including css and js files and images
 7. Add application icons to static content
 8. Customize Admin interface re foods app
-9. Refactor Templates to include proper base.html
+9. Re-factor Templates to include proper base.html
+10. Items purchased should remain visible for one calendar day on index view
+11. Smaller font markup for purchased items
+12. Italic font markup for purchased items
+13. JavaScript prompt for market on purchase check-box checked event (if not already input)
+14. JavaScript prompt for price on purchase check-box checked event (if not already input)
+15. Add quantity counter input (arrows up and down to manipulate)
+16. Create View to Display price trajectory graphs
+17. Create View to Display most frequently purchased items
