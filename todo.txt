@@ -15,3 +15,4 @@
 15. Add quantity counter input (arrows up and down to manipulate)
 16. Create View to Display price trajectory graphs
 17. Create View to Display most frequently purchased items
+18. Integrate modelformset_factory
