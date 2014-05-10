@@ -1,5 +1,32 @@
+<style tpye="text/css">
+
+ul{list-style:none;background:4FF;margin-left:-2.5em;}
+.alt{color:purple;background:AFF;}
+
+</style>
+
+
 <form method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
     {% csrf_token %}
-    {{ formset.as_p }}
-    <input type="submit" value="Save"/>
+    {{ formset.management_form }}
+    <ul id="formset" class="form">
+    {% for form in formset %}
+      <li {% cycle ,class=\"alt\" %}>
+      {% for field in form.visible_fields %}
+        {% if field.label != "Name" and field.label != "Purchased" %}
+        {{ field.label|capfirst }}:
+        {% endif %}
+        {# Include the hidden fields in the form #}
+        {% if forloop.first %}
+          {% for hidden in form.hidden_fields %}
+          {{ hidden }}
+          {% endfor %}
+        {% endif %}
+          {{ field.errors.as_ul }}
+          {{ field }}
+      {% endfor %}
+      </li>
+    {% endfor %}
+    </ul>
+<input type="submit" value="Save"/>
 </form>
