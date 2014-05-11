@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, redirect
 from django.views.generic.edit import CreateView
 from django.forms.models import modelformset_factory
 from django.template import RequestContext
@@ -20,7 +20,7 @@ def testform(request):
         formset = ItemFormSet(request.POST, request.FILES)
         if formset.is_valid():
             formset.save()
-            # do something.
+            return redirect('foods:testform')
     else:
         formset = ItemFormSet()
     return render_to_response("foods/testform.html",

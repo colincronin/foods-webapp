@@ -6,7 +6,7 @@ ul{list-style:none;background:4FF;margin-left:-2.5em;}
 </style>
 
 
-<form method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+<form method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %} id="testform" name="testform">
     {% csrf_token %}
     {{ formset.management_form }}
     <ul id="formset" class="form">
