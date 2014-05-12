@@ -1,7 +1,6 @@
 Add Delete Button (X Image) and Add Javascript to prompt delete check and then hide selected form and set operative delete checkbox to checked
+Add JavaScript/Python to poll the db for prior Item.name and ajax type widget to promt previous items entered
 Add JavaScript to display prior pricing in price field of modification form context
-Change ItemForm to display price (decimal widget) and ensure price (decimal) validation
-Refresh testform view to flush post data
 Create History View to list all Items purchased (paginated)
 Create Trends View to index analytics
 Add static content including css and js files and images

@@ -1,3 +1,20 @@
+<html>
+<head>
+<script>
+function enterFunction(event, input_id, input) {
+    if(event.keyCode == 13) {
+        myFunction(input_id, input);
+    }
+}
+function myFunction(input_id, input) {
+    if (input % 1 == 0 && input != '') {
+        output = input/100;
+        document.getElementById(input_id).value = output;
+    }
+}
+</script>
+</head>
+<body>
 <style tpye="text/css">
 
 ul{list-style:none;background:4FF;margin-left:-2.5em;}
@@ -14,7 +31,7 @@ ul{list-style:none;background:4FF;margin-left:-2.5em;}
       <li {% cycle ,class=\"alt\" %}>
       {% for field in form.visible_fields %}
         {% if field.label != "Name" and field.label != "Purchased" %}
-        {{ field.label|capfirst }}:
+        {{ field.label|capfirst }}
         {% endif %}
         {# Include the hidden fields in the form #}
         {% if forloop.first %}
@@ -30,3 +47,7 @@ ul{list-style:none;background:4FF;margin-left:-2.5em;}
     </ul>
 <input type="submit" value="Save"/>
 </form>
+
+
+</body>
+</html>
