@@ -1,28 +1,9 @@
-<html>
-<head>
-<script>
-function enterFunction(event, input_id, input) {
-    if(event.keyCode == 13) {
-        myFunction(input_id, input);
-    }
-}
-function myFunction(input_id, input) {
-    if (input % 1 == 0 && input != '') {
-        output = input/100;
-        document.getElementById(input_id).value = output;
-    }
-}
-</script>
-</head>
-<body>
-<style tpye="text/css">
+{% extends 'foods/base.html' %}
+{% load staticfiles %}
 
-ul{list-style:none;background:4FF;margin-left:-2.5em;}
-.alt{color:purple;background:AFF;}
+{% block title %}Foods App!{% endblock %}
 
-</style>
-
-
+{% block content %}
 <form method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %} id="testform" name="testform">
     {% csrf_token %}
     {{ formset.management_form }}
@@ -30,7 +11,7 @@ ul{list-style:none;background:4FF;margin-left:-2.5em;}
     {% for form in formset %}
       <li {% cycle ,class=\"alt\" %}>
       {% for field in form.visible_fields %}
-        {% if field.label != "Name" and field.label != "Purchased" %}
+        {% if field.label != "Name" and field.label != "Purchased" and field.label != "Delete" %}
         {{ field.label|capfirst }}
         {% endif %}
         {# Include the hidden fields in the form #}
@@ -40,14 +21,16 @@ ul{list-style:none;background:4FF;margin-left:-2.5em;}
           {% endfor %}
         {% endif %}
           {{ field.errors.as_ul }}
-          {{ field }}
+          {% if field.label != "Delete" %}
+            {{ field }}
+          {% else %}
+            <img src="{% static 'foods/images/redx2.png' %}" width="15em" />
+            {{ field }}
+          {% endif %}
       {% endfor %}
       </li>
     {% endfor %}
     </ul>
 <input type="submit" value="Save"/>
 </form>
-
-
-</body>
-</html>
+{% endblock %}

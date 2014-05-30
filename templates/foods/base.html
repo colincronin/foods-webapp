@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<html>
+<head>
+{% block header %}
+    <meta charset="utf-8">
+    <title>{% block title %}Foods App!{% endblock %}</title>
+    <meta name="viewport" content="width=device-width; initial-scale=0.4; maximum-scale=0.6">
+    <meta name="description" content="Colin and Liana's Foods Application">
+    <meta name="author" content="Colin and Liana">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'foods/favicon.ico' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'foods/favicon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'foods/style.css' %}" />
+    <script src="{% static 'foods/jscripts.js' %}"></script>
+    <!-- Apple Icons -->
+    <link rel="apple-touch-icon" href="{% static 'foods/icons/touch-icon-iphone.png' %}" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'foods/icons/touch-icon-ipad.png' %}" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'foods/icons/touch-icon-iphone4.png' %}" />
+    <link rel="apple-touch-startup-image" href="{% static 'foods/startup.png' %}">
+{% endblock %}
+</head>
+<body>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

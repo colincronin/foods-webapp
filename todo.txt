@@ -6,7 +6,6 @@ Create Trends View to index analytics
 Add static content including css and js files and images
 Add application icons to static content
 Customize Admin interface re foods app
-Re-factor Templates to include proper base.html
 Items purchased should remain visible for one calendar day on index view
 Smaller font markup for purchased items
 Italic font markup for purchased items
