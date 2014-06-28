@@ -10,6 +10,10 @@ class ItemForm(forms.ModelForm):
             'price': ('$'),
         }
         widgets = {
+            'name': forms.TextInput(attrs={
+                'type': 'text',
+                'size': '17',
+             }),
             'price': forms.TextInput(attrs={
                 'type': 'number',
                 'size': '6',

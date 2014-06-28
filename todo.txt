@@ -14,3 +14,4 @@ JavaScript prompt for price on purchase check-box checked event (if not already 
 Add quantity counter input (arrows up and down to manipulate)
 Create View to Display price trajectory graphs
 Create View to Display most frequently purchased items
+Add JavaScript to automatically capitolize item name entries prior to form submission
