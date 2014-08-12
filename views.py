@@ -20,7 +20,7 @@ def testform(request):
         formset = ItemFormSet(request.POST, request.FILES)
         if formset.is_valid():
             formset.save()
-            return redirect('foods:testform')
+            return redirect('foods:index')
     else:
         formset = ItemFormSet()
     return render_to_response("foods/testform.html",
